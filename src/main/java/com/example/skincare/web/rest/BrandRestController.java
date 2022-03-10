@@ -21,8 +21,6 @@ public class BrandRestController {
     }
 
     @GetMapping
-    //do sega nemavme vakvo vrakjanje na lista na podatoci tuku imavme vrakjanje na nekoe view!!!
-    //sega vrakjame PODATOCI!!!
     public List<Brand> findAll() {
         return this.brandService.findAll();
     }
