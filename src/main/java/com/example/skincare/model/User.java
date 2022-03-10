@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name = "shop_users")//user e rezerviran zbor i kje dobiesh error ako ne go smenis imeto na tabelata
+@Table(name = "shop_users")
 public class User {
 
     @Id
