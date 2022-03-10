@@ -27,7 +27,6 @@ public class ShoppingCartController {
     }
 
     @GetMapping
-    //kje se prikazat site produkti vo ramkite na kosnickata na eden korisnik
     public String getShoppingCartPage(@RequestParam(required = false) String error,
                                       HttpServletRequest req,
                                       Model model) {
@@ -48,9 +47,7 @@ public class ShoppingCartController {
     public String addProductToShoppingCart(@PathVariable Long id, HttpServletRequest req, Authentication authentication){
         try {
 
-//            User user = (User) authentication.getPrincipal();
             User user = (User) req.getSession().getAttribute("user");
-            //dodadi go produktot
             this.shoppingCartService.addProductToShoppingCart(user.getUsername(), id);
             return "redirect:/shopping-cart";
         } catch (RuntimeException exception) {
@@ -63,7 +60,6 @@ public class ShoppingCartController {
                                                 HttpServletRequest req){
         try {
             User user = (User) req.getSession().getAttribute("user");
-            //IZBRISI go produktot
             this.shoppingCartService.deleteProductFromShoppingCart(user.getUsername(), id);
             return "redirect:/shopping-cart";
         } catch (RuntimeException exception) {
