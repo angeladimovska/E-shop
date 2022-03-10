@@ -6,5 +6,4 @@ const instance = axios.create({
         'Access-Control-Allow-Origin' : '*'
     }
 })
-//ova za da mozam da ja pristapam od drugi delovi
 export default instance;
