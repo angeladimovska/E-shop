@@ -2,8 +2,6 @@ import React from 'react';
 import ProductTerm from '../ProductTerm/productTerm';
 import {Link} from 'react-router-dom';
 
-//ova e funkcionalna komponenta- return e isto so render metod sto go imame
-// kaj KLASNA komponenta
 const products = (props) => {
 
     return (
