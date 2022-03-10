@@ -1,8 +1,6 @@
-//ova e eden product od listata na produkti
 import React from "react";
 import {Link} from "react-router-dom"
 
-//roditel komponenta e products preku props go davame produktot kon produkt term
 const ProductTerm = (props) =>{
     return(
         <tr>
