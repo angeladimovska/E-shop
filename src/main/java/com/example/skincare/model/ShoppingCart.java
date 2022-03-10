@@ -17,8 +17,6 @@ public class ShoppingCart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //ova za posle nekoe vreme da se invalidira kosnickata ko ako ne stavis nisto vo rok
-    // od 15 min da se izbrise se sho imas
     private LocalDateTime dateCreated;
 
     @ManyToOne
