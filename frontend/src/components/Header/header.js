@@ -18,10 +18,6 @@ const header= (props)=> {
                             <a className="nav-link active" href="/products">Products</a>
                         </li>
 
-                        {/*<li className="nav-item m-auto">*/}
-                        {/*    <Link className={"nav-link active"} to={"/categories"} > Categories</Link>*/}
-                        {/*</li>*/}
-
                         <li className="nav-item m-auto">
                             <a className="nav-link active" href="/categories">Categories</a>
                         </li>
