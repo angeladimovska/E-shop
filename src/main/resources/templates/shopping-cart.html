@@ -86,7 +86,6 @@
                         <td th:text="${product.getDiscount() != null}
                             ? ${product.getDiscount().getId()} : 'No Discount'"></td>
 
-            <!--METOD ZA BRISENJE NA PRODUKT OD KOSNICKATA -AKO NEJKES DA GO KUPIS-->
                         <td class="text-right">
                             <th:block>
                                 <form th:action="@{'/shopping-cart/delete-product/{id}' (id=${product.getId()})}"
