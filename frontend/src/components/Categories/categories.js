@@ -13,7 +13,6 @@ const categories = (props) =>{
                         </thead>
 
                         <tbody>
-                        {/*brands.MAP iterira niz listata toest e kako th:each="term : ${brands}" */}
                         {props.categories.map((term) => {
                             return (
                                 //vrati go imeto
@@ -30,5 +29,4 @@ const categories = (props) =>{
         </div>
     )
 }
-//da mozes da pristapuvas do brands nadvor od ovaa komponenta
 export default categories;
