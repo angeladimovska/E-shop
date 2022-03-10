@@ -34,14 +34,11 @@ public class LoginController {
             user = this.authService.login(request.getParameter("username"),
                     request.getParameter("password"));
             request.getSession().setAttribute("user", user);
-
-            //koga uspesno se logiral redirect na products
             return "redirect:/products";
         }
         catch (InvalidUserCredentialsException exception) {
             model.addAttribute("hasError", true);
             model.addAttribute("error", exception.getMessage());
-            //ako ne se logiral uspesno pak na login vrati go
             return "login";
         }
     }
