@@ -10,13 +10,10 @@ const EshopService= {
     fetchProducts : () => {
         return axios.get("/products");
     },
-    //za evaluiranje izraz so `` backticks
+    
     deleteProduct: (id)=>{
         return axios.delete(`/products/delete/${id}`)
     },
-
-    //ke treba da mu pratime celosen objekt - REQUESTBODY
-    //ova sho e data odi vo request body
     addProduct: (name, price, quantity, category, brand) => {
         return axios.post("/products/add", {
             "name" : name,
