@@ -10,15 +10,11 @@ import EShopService from "../../repository/eshopRepository";
 import ProductAdd from "../Products/ProductAdd/productAdd";
 import ProductEdit from "../Products/ProductEdit/productEdit";
 
-//ovaa komponenta e roditel i e STATEFUL!
-//toa ke bide najgore i ke ja predavame nadolu
+
 class App extends Component{
-    //edna komponenta ima konstruktor, ima render i componentDidMount metod
     constructor(props) {
         super(props);
-        //App komponentata cuva state i toa e ovoj objekt state i nie pravime nekoja promena vrz nego podole so set state
-        this.state = { //sostojbata e sekogas nekakov objekt i ke davame key-value parovi za properties shto ke gi cuvam
-            //props { job : "developer"} i vo nas slucaaj brands i prazna lista
+        this.state = { 
             brands : [],
             categories : [],
             products : [],
@@ -26,7 +22,6 @@ class App extends Component{
         }
     }
 
-    //po povikuvanje na konstruktor se povikuva render
     render() {
         return (
             <Router>
@@ -36,12 +31,8 @@ class App extends Component{
                             <Routes>
                             <Route path={"/brands"} element={<Brands brands={this.state.brands}/>} exact render/>
 
-                                {/*// <Brands brands={this.state.brands}/>}/>*/}
-
-                                <Route path={"/categories"} element={<Categories categories={this.state.categories}/>} exact render/>
-                                 {/*<Categories categories={this.state.categories}/>}/>*/}
-
-                                {/*ovde ni treba i callback od productAdd nagore*/}
+                               <Route path={"/categories"} element={<Categories categories={this.state.categories}/>} exact render/>
+                         
                                 <Route path={"/products/add"}  element={
                                     <ProductAdd categories={this.state.categories}
                                                 brands={this.state.brands}
@@ -67,7 +58,6 @@ class App extends Component{
     loadBrands = () => {
         EshopService.fetchBrands()
             .then((data) => {
-                //pravi promena na sostojba na komponentata sto ni e stateful i novo renderiranje
                 this.setState({
                     brands: data.data
                 })
@@ -77,7 +67,6 @@ class App extends Component{
     loadCategories = () => {
         EshopService.fetchCategories()
             .then((data) => {
-                //pravi promena na sostojba na komponentata sto ni e stateful i novo renderiranje
                 this.setState({
                     categories: data.data
                 })
